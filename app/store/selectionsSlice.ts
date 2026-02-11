@@ -9,7 +9,7 @@ export type CVSection =
 
 type SectionsVisibility = Record<CVSection, boolean>;
 
-const initialState: SectionsVisibility = {
+export const sectionsInitialState: SectionsVisibility = {
   personal: true,
   experience: true,
   skills: true,
@@ -19,7 +19,7 @@ const initialState: SectionsVisibility = {
 
 const sectionsSlice = createSlice({
   name: 'sections',
-  initialState,
+  initialState: sectionsInitialState,
   reducers: {
     toggleSection(state, action: PayloadAction<CVSection>) {
       state[action.payload] = !state[action.payload];

@@ -1,0 +1,226 @@
+.form {
+    display: flex;
+    justify-content: center;
+    padding: 16px 8px 32px;
+}
+
+.experienceWrapper {
+    width: min(1100px, 100%);
+    border: 1px solid #2f3b52;
+    border-radius: 12px;
+    padding: 20px 22px 26px;
+    background: #0f172a;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.45);
+}
+
+.legend {
+    padding: 0 10px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    gap: 16px;
+}
+
+.sectionTitle {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.addButton {
+    border: 1px solid #2f3b52;
+    background: #111827;
+    color: #e5e7eb;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.addButton:hover {
+    background: #0b1221;
+    color: #22c55e;
+}
+
+.experienceList {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.experienceCard {
+    border: 1px solid #2f3b52;
+    border-radius: 12px;
+    padding: 16px;
+    background: #0b1221;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cardTitle {
+    font-weight: 600;
+    margin: 0;
+}
+
+.cardActions {
+    display: flex;
+    gap: 8px;
+}
+
+.removeButton {
+    background: transparent;
+    border: 1px solid #2f3b52;
+    color: #e5e7eb;
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.removeButton:hover {
+    color: #fca5a5;
+    border-color: #fca5a5;
+}
+
+.inlineFields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 0;
+}
+
+.field label {
+    margin-bottom: 0;
+}
+
+.field small {
+    margin: 0;
+    display: block;
+}
+
+.fullRow {
+    grid-column: 1 / -1;
+}
+
+.customInput {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #2f3b52;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background: #0f172a;
+    color: inherit;
+}
+
+.customInput:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 1px #38bdf8;
+}
+
+.customInput:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.inputError {
+    border-color: #f87171;
+    box-shadow: 0 0 0 1px #f87171;
+}
+
+.errorText {
+    color: #fca5a5;
+    font-size: 0.75rem;
+}
+
+.validText {
+    color: #34d399;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.switchRow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    margin-top: 6px;
+}
+
+.switch {
+    position: relative;
+    width: 36px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    inset: 0;
+    background: #2f3b52;
+    border-radius: 999px;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+.switch input:checked + .slider {
+    background: #22c55e;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(16px);
+}
+
+.saveButton {
+    margin-top: 18px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 12px 14px;
+    background: #22c55e;
+    color: #052e16;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.saveButton:hover {
+    background: #16a34a;
+}
+
+@media (max-width: 720px) {
+    .inlineFields {
+        grid-template-columns: 1fr;
+    }
+}

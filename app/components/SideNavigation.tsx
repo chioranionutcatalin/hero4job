@@ -3,11 +3,32 @@
 import Link from "next/link";
 import { useAppDispatch, useAppSelector } from "../../app/store/hooks";
 import { toggleSection } from "../../app/store/selectionsSlice";
+import {
+  clearEducationData,
+  clearLanguagesData,
+  clearSkillsData,
+} from "../../app/store/cvSlice";
 import styles from "../page.module.css";
 
 export function SideNavigation() {
   const sections = useAppSelector((state) => state.sections);
   const dispatch = useAppDispatch();
+
+  const handleToggle = (section: keyof typeof sections) => {
+    const isEnabled = sections[section];
+    if (isEnabled) {
+      if (section === "skills") {
+        dispatch(clearSkillsData());
+      }
+      if (section === "languages") {
+        dispatch(clearLanguagesData());
+      }
+      if (section === "education") {
+        dispatch(clearEducationData());
+      }
+    }
+    dispatch(toggleSection(section));
+  };
 
   return (
     <aside className={styles.sidebar}>
@@ -29,21 +50,21 @@ export function SideNavigation() {
           href="/skills"
           label="Skills"
           checked={sections.skills}
-          onToggle={() => dispatch(toggleSection("skills"))}
+          onToggle={() => handleToggle("skills")}
         />
 
         <NavToggle
           href="/languages"
           label="Languages"
           checked={sections.languages}
-          onToggle={() => dispatch(toggleSection("languages"))}
+          onToggle={() => handleToggle("languages")}
         />
 
         <NavToggle
           href="/education"
           label="Education"
           checked={sections.education}
-          onToggle={() => dispatch(toggleSection("education"))}
+          onToggle={() => handleToggle("education")}
         />
 
         <div className={styles.divider} />

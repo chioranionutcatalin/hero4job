@@ -1,0 +1,222 @@
+
+.form {
+    display: flex;
+    justify-content: center;
+    padding: 16px 8px 32px;
+}
+
+.personalWrapper {
+    width: min(1100px, 100%);
+    border: 1px solid #2f3b52;
+    border-radius: 12px;
+    padding: 20px 22px 26px;
+    background: #0f172a;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.45);
+}
+
+.legend {
+    padding: 0 10px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+.cardBody {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: 28px;
+}
+
+.formColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.inlineFields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 0;
+}
+
+.customInput {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #2f3b52;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background: #0b1221;
+    color: inherit;
+}
+
+.customInput:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 1px #38bdf8;
+}
+
+.inputError {
+    border-color: #f87171;
+    box-shadow: 0 0 0 1px #f87171;
+}
+
+.errorText {
+    color: #fca5a5;
+    font-size: 0.75rem;
+}
+
+.validText {
+    color: #34d399;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.photoColumn {
+    display: flex;
+    justify-content: center;
+}
+
+.photoCard {
+    width: 100%;
+    border: 1px solid #2f3b52;
+    border-radius: 12px;
+    padding: 16px;
+    background: #0b1221;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    text-align: center;
+}
+
+.photoTitle {
+    font-weight: 600;
+}
+
+.photoPreview {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid #2f3b52;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    background: #111827;
+}
+
+.rightBox {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.photoImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photoPlaceholder {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.photoActions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.uploadButton {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: #1f2937;
+    color: inherit;
+    border: 1px solid #2f3b52;
+    cursor: pointer;
+}
+
+.fileInput {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.removeButton {
+    background: transparent;
+    border: none;
+    color: #93c5fd;
+    cursor: pointer;
+}
+
+.saveButton {
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px 12px;
+    background: #22c55e;
+    color: #052e16;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+.saveButton:hover {
+    background: #16a34a;
+}
+
+.photoHint {
+    font-size: 0.75rem;
+    opacity: 0.65;
+    margin: 0;
+}
+
+.statePreview {
+    width: min(1100px, 100%);
+    margin: 18px auto 0;
+    padding: 16px 18px;
+    border-radius: 12px;
+    background: #0b1221;
+    border: 1px solid #2f3b52;
+}
+
+.stateTitle {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.stateCode {
+    margin: 0;
+    font-size: 0.8rem;
+    white-space: pre-wrap;
+}
+
+@media (max-width: 900px) {
+    .cardBody {
+        grid-template-columns: 1fr;
+    }
+
+    .photoColumn {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 640px) {
+    .inlineFields {
+        grid-template-columns: 1fr;
+    }
+}

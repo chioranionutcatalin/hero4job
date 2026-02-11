@@ -1,28 +1,39 @@
 export interface PersonalDataType {
-  fullName: string;
-  jobTitle?: string;
-  summary?: string;
+  firstName: string;
+  lastName: string;
   email: string;
-  phone?: string;
-  location?: string;
+  phone: string;
+  country: string;
+  city: string;
   linkedInUrl?: string;
   personalWebsite?: string;
   profileImageUrl?: string;
   driverLicenseCategory?: string;
+  desiredJobTitle?: string;
+  summary?: string;
 }
+
+export type DateParts = {
+  day: number | null;
+  month: number;
+  year: number;
+};
 
 export interface ExperienceType {
-  jobTitle: string;
+  role: string;
   companyName: string;
-  startDate: string;
-  endDate?: string;
+  startDate: DateParts;
+  endDate?: DateParts;
   location?: string;
+  remote?: boolean;
   stillWorkingHere?: boolean;
+  description?: string;
 }
 
-export interface AbilityType {
+export interface SkillType {
   name: string;
-  proficiencyLevel?: 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert';
+  proficiencyLevel?: 'N/A' | 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert';
+  description?: string;
 }
 
 export interface LanguageType {
@@ -43,7 +54,7 @@ export interface EducationType {
 export interface CVType {
   personalData: PersonalDataType;
   experienceData: ExperienceType[];
-  abilitiesData: AbilityType[];
+  skillsData: SkillType[];
   languagesData: LanguageType[];
   educationData: EducationType[];
 }
