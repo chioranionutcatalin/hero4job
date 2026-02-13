@@ -15,5 +15,5 @@ The app includes:
 npm install
 npm run dev
 ```
-
+![alt text](image.png)
 Open http://localhost:3000
