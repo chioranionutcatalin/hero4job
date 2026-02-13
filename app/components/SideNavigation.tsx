@@ -11,6 +11,7 @@ const DOWNLOAD_LAYOUT_KEY = "hero4job_download_layout";
 const LEGACY_DOWNLOAD_LAYOUT_KEY = "fastcv_download_layout";
 const DOWNLOAD_LAYOUT_EVENT = "hero4job:download-layout";
 const LEGACY_DOWNLOAD_LAYOUT_EVENT = "fastcv:download-layout";
+const HOME_ROUTE = "/";
 type DownloadLayout = "classic" | "compact";
 
 export function SideNavigation() {
@@ -192,18 +193,16 @@ export function SideNavigation() {
   return (
     <aside className={styles.sidebar}>
       <div className={styles.logoContainer}>
-        <Link href="/" aria-label="Hero for Job home">
+        <Link href={HOME_ROUTE} aria-label="Hero for Job home">
           <img className={styles.logo} src="/hero4job-logo.svg" alt="hero4job" />
         </Link>
       </div>
       <nav className={styles.nav}>
-        <NavLink href="/" label="Home" />
+        <NavLink href={HOME_ROUTE} label="Home" />
 
         <NavLink href="/personal" label="Personal Info" />
 
         <NavLink href="/experience" label="Work Experience" />
-
-        <NavLink href="/preview" label="Preview My CV" />
 
         <NavToggle
           href="/skills"
@@ -231,6 +230,8 @@ export function SideNavigation() {
         <ThemeToggle />
 
         <div className={styles.divider} />
+
+        <NavLink href="/preview" label="Preview My CV" />
 
         <div className={styles.navItem}>
           <button
